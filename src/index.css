@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Rokkitt', serif;
+  font-size: 10px;
+  background-color: #555;
+}
+
+link, link:hover {
+  text-decoration: none;
+}
+
+.content h1 {
+  display: block;
+  margin-top: 2rem;
+  font-size: 3rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* .text {
+  font-size: 1.75rem;
+  margin: 2rem 6rem;
+} */
