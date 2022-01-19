@@ -1,30 +1,28 @@
 
-
- .btns-three {
-    display: grid;
-    margin-top: 2rem;
-    margin-left: 5rem;
-    grid-template-columns: repeat(3, 1fr);
- }
-
+.btns-three {
+   display: grid;
+   margin-top: 2rem;
+   margin-left: 5rem;
+   grid-template-columns: repeat(3, 1fr);
+}
 
 .grey_list {
-    background-color: #888;
-    font-size: 2em;
-    text-align: center;
-    height: 54vh;
-    margin: 1rem 1rem;
- }
+   background-color: #888;
+   font-size: 2em;
+   text-align: center;
+   height: 54vh;
+   margin: 1rem 1rem;
+}
 
-  ul {
-    background-color: #BBB;
-    height: 37vh;
-    border-radius: 1.5rem;
-    margin: 0.5rem;
- }
+ul {
+   background-color: #BBB;
+   height: 37vh;
+   border-radius: 1.5rem;
+   margin: 0.5rem;
+}
 
- li {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    font-size: 2rem;
- }
+li {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   font-size: 2rem;
+}

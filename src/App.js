@@ -1,34 +1,30 @@
-//import logo from './logo.svg';
+import {Route, Routes} from 'react-router-dom'
+
 import './App.css';
+
 import Main from './pages/Main';
 import Login from './pages/Login';
 import Registration from './pages/Registration';
 import Profile from './pages/Profile';
 import NewVisit from './pages/NewVisit'
 import LastVisit from './pages/LastVisit'
-
-import {Route, Routes} from 'react-router-dom'
+import Admin from './pages/Admin'
 
 const App = () => {
 
-  const user ={ Email: "michael1999@op.pl",
-  LastName: "Ślązak",
-  Name: "Michał",
-  UserId: 2}
   return (
-
     <div className="App">
-
       <div className="top-red"></div>
       <div className="content">
-      <Routes>
-        <Route path='*' element={<Main/>}/>
-        <Route path='/signin' element={<Login/>}/>
-        <Route path='/registration' element={<Registration/>}/>
-        <Route path='/profile' element={<Profile user={user}/>}/>
-          <Route path='/visit' element={<NewVisit user={user}/>}/>
-          <Route path='/last' element={<LastVisit user={user}/>}/>
-      </Routes>
+        <Routes>
+          <Route path='*' element={<Main/>}/>
+          <Route path='/signin' element={<Login/>}/>
+          <Route path='/admin' element={<Admin/>}/>
+          <Route path='/registration' element={<Registration/>}/>
+          <Route path='/profile' element={<Profile />}/>
+            <Route path='/visit' element={<NewVisit />}/>
+            <Route path='/last' element={<LastVisit />}/>
+        </Routes>
       </div>
       <div className="bot-red"></div>
     </div>

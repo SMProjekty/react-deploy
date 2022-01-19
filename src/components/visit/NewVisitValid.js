@@ -1,4 +1,4 @@
-
+//validation New Visit
 const Validate = (hour, date, servicee) => {
     if(!hour){
         return "Wybierz godzinę"
@@ -11,7 +11,6 @@ const Validate = (hour, date, servicee) => {
     if(!servicee){
         return "Wybierz usługę"
     }
-
 
     return null
 }

@@ -1,62 +1,29 @@
 .form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
  }
 
- .form label {
-    font-size: 1.5rem;
-    margin-right: 5rem;
-    cursor: pointer;
-    margin-top: 1.25rem;
- }
-
- .form input {
-    font-size: 1.5rem;
-    background-color: transparent;
-    outline: none;
-    outline-style: none;
-    margin-top: 1.25rem;
-    border: none;
-    border-bottom: solid #555 1px;
- }
-
- .invalid {
-    border-bottom: solid red 2px;
- }
-
- .valid {
-    border-bottom: solid green 2px;
- }
-
-
- /* button:disabled {
-    background-color: #BBB;
- }
-
-.btns {
-display: grid;
-margin: auto;
-margin-top: 4rem;
-grid-column: span 2;
-grid-template-columns: 50% 50%;
+.form label {
+   font-size: 1.5rem;
+   margin-right: 5rem;
+   cursor: pointer;
+   margin-top: 1.25rem;
 }
 
-button { cursor: pointer; }
-button:disabled { cursor: default; }
-
-button {
-justify-self: center;
-font-size: 1.5rem;
-border-radius: 0;
-border: 0;
-background-color: #FF7878;
-height: 2.5rem;
-padding: 1rem;
-line-height: 0rem;
-width: fit-content;
-height: fit-content;
+.form input {
+   font-size: 1.5rem;
+   background-color: transparent;
+   outline: none;
+   outline-style: none;
+   margin-top: 1.25rem;
+   border: none;
+   border-bottom: solid #555 1px;
 }
 
-button:hover {
-background-color: #BBB;
-} */
+.invalid {
+   border-bottom: solid red 2px;
+}
+
+.valid {
+   border-bottom: solid green 2px;
+}

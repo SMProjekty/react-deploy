@@ -22,7 +22,6 @@
   bottom: 0;
 }
 
-
 .content {
   display: grid;
   justify-content: center;
@@ -32,7 +31,6 @@
   font-size: 1.75rem;
   margin: 2rem 6rem;
 }
-
 
 .btns {
   display: grid;
@@ -56,9 +54,12 @@
   padding: 1rem;
   line-height: 0rem;
   width: fit-content;
-  /* height: fit-content; */
   }
 
   button:hover {
   background-color: #BBB;
+  }
+
+  .error{
+    color: red;
   }

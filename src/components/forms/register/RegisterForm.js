@@ -1,6 +1,7 @@
 import React from 'react';
-import '../FormStyle.css';
 import { Link } from 'react-router-dom';
+
+import '../FormStyle.css';
 
 import UseRegister from './UseRegister';
 
@@ -9,8 +10,12 @@ function RegisterForm() {
     const {handleChange, user, handleSubmit, errors} = UseRegister();
 
     return (
-        <form onSubmit={handleSubmit}>
-                    <div className='form'>
+        <div>
+            <div className='error'>
+                <p>{errors}</p>
+            </div>
+            <form onSubmit={handleSubmit}>
+                <div className='form'>
                     <label htmlFor='email'>E-mail:</label>
                     <input type="email"  name="email" id="email" value={user.email} onChange={handleChange} />
 
@@ -31,16 +36,15 @@ function RegisterForm() {
 
                     <label htmlFor='phone'>Telefon:</label>
                     <input type="phone" name="phone" id="phone" value={user.phone} onChange={handleChange} />
-                    </div>
-                    <div className='btns'>
+                </div>
+                <div className='btns'>
                     <Link to={'/'}>
-                    <button  className='btn'>{"Wstecz"}</button>
+                        <button  className='btn'>{"Wstecz"}</button>
                     </Link>
                     <button className='btn' type='submit'>Zarejestruj</button>
                 </div>
-
-        </form>
-
+            </form>
+        </div>
     )
 }
 

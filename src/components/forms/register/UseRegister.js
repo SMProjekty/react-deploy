@@ -3,11 +3,11 @@ import Validate from './ValidateR';
 import { useNavigate } from 'react-router';
 
 const UseRegister = () => {
-   let navigate = useNavigate();
-    var add="Failed to Add"
-    const [errors, setErrors] = useState(null);
+  let navigate = useNavigate();
+  var add="Failed to Add"
+  const [errors, setErrors] = useState(null);
 
-    const [user, setUser] = useState({
+  const [user, setUser] = useState({
     email: '',
     password: '',
     password2: '',
@@ -16,7 +16,7 @@ const UseRegister = () => {
     phone: '',
   });
 
-
+  //downland data from the form
   const handleChange = event => {
     const { name, value } = event.target;
     setUser({
@@ -25,6 +25,7 @@ const UseRegister = () => {
     });
   };
 
+  //Do after click submit
   const handleSubmit = event => {
     event.preventDefault();
     const error = Validate(user)
@@ -39,9 +40,9 @@ const UseRegister = () => {
         Name: user.fst_name,
         LastName: user.sec_name,
         Phone: user.phone,
-        }
+      }
 
-      fetch("https://fryzjerprojekt.herokuapp.com/register",
+      fetch("http://127.0.0.1:8000/register",
       {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
@@ -57,7 +58,7 @@ const UseRegister = () => {
           return add
         }
       })
-  }
+    }
   };
 
   return { handleChange, user, handleSubmit, errors };

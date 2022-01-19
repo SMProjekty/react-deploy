@@ -1,123 +1,106 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import { useNavigate } from 'react-router';
 
 import './NewVisitStyle.css'
+
+import {profile} from '../components/forms/login/UseLogin';
 import NewVisitValid from '../components/visit/NewVisitValid';
-import Profile from './Profile';
 
+function NewVisit() {
+  //user data
+  const user = profile[0]
+  const id = user.UserId
 
+  let navigate = useNavigate();
 
-function NewVisit(props) {
-    const user = props.user
-    const id = user.UserId
+  const [errors, setErrors] = useState('');
+  const [hour, setHour] = useState('');
+  const [date, setDate] = useState('');
+  const [service, setService] = useState('');
 
-   let navigate = useNavigate();
+  //Do after click submit
+  const handleSubmit = e => {
+    e.preventDefault();
+    const error = NewVisitValid(hour, date, service)
+    if(error){
+      setErrors(error)
+      console.log(errors)
+      return error
+    }
+    else{
+      //Status is N because this is future visit
+      var data = {
+        userr: user.UserId,
+        Hhour: hour,
+        Ddate: date,
+        ServiceeId: service,
+        Status: 'N'
+      };
 
-    const [errors, setErrors] = useState('');
-    const [hour, setHour] = useState('');
-    const [date, setDate] = useState('');
-    const [service, setService] = useState('');
-    const [validOk, setValidOk] = useState();
-
-
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        const error = NewVisitValid(hour, date, service)
-        if(error){
-        setErrors(error)
-        console.log(errors)
-        return error
-        }else{
-
-          setValidOk(true)
-        }
-  	};
-
-    useEffect(() => {
-      if (validOk === (true)) {
-        var data = {
-          UserId: user.UserId,
-          Hhour: hour,
-          Ddate: date,
-          ServiceeId: service,
-          Status: 'N'
-        };
-
-       fetch(`https://fryzjerprojekt.herokuapp.com/${id}/`,
+      fetch(`http://127.0.0.1:8000/visit/${id}/`,
         {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
-         })
-         .then(res => res.json())
-         .then(json => setErrors(json))
-         .then( pass => {
-          if (setErrors !== "Failed to Add"){
-            setErrors(true)
-            setValidOk(false)
-            navigate('/profile', <Profile user={user}/>);
-
-          }
-          setErrors(true)
-          setValidOk(false)
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
         })
+        .then(res => res.json())
+        .then(json => setErrors(json))
+        .then( pass => {
+          if (setErrors !== "Failed to Add"){
+            navigate('/profile');
+            //We need to break loop
+            setErrors(true)
+          }
+        })
+    }
+  };
 
-    }},[validOk,date,hour,service, id, user, navigate]
-    )
-
-
-    return (
+  return (
     <div className='text'>
       <h1>Umów wizytę</h1>
       <form onSubmit={handleSubmit}>
-      <div className="grey_list">
+        <div className="grey_list">
           <label>Godzina: </label>
-          <input type="time" value={hour}
-            onChange={e => setHour(e.target.value)} />
-
+          <input type="time" value={hour} onChange={e => setHour(e.target.value)} />
 
           <label>Data: </label>
-          <input type="date" value={date}
-            onChange={e => setDate(e.target.value)} />
+          <input type="date" value={date} onChange={e => setDate(e.target.value)} />
 
-            <div className='lighter'>
+          <div className='lighter'>
 
             <div className="radio">
-            <label>
-              <input type="radio" name="Servicee" value="1" onChange={e => setService(e.target.value)}/>
-              Strzyżenie 45 zł
-            </label>
+              <label>
+                <input type="radio" name="Servicee" value="1" onChange={e => setService(e.target.value)}/>
+                Strzyżenie 45 zł
+              </label>
             </div>
+
             <div className="radio">
-            <label>
-            <input type="radio" name="Servicee" value="2" onChange={e => setService(e.target.value)}/>
-             Loki 110 zł
-            </label>
+              <label>
+                <input type="radio" name="Servicee" value="2" onChange={e => setService(e.target.value)}/>
+                Loki 110 zł
+              </label>
             </div>
+
             <div className="radio">
-           <label>
-            <input type="radio" name="Servicee" value="3" onChange={e => setService(e.target.value)}/>
-            Koloryzacja 90 zł
-          </label>
+              <label>
+                <input type="radio" name="Servicee" value="3" onChange={e => setService(e.target.value)}/>
+                Koloryzacja 90 zł
+              </label>
+            </div>
           </div>
-
-          </div>
-          </div>
-
-          <div className='btns-new'>
-            <button className='btn' type="submit">Zatwierdź</button>
-
-            <Link to={'/profile'}>
-                <button className="btn">Wstecz</button>
-            </Link>
-
-          </div>
-        </form>
         </div>
 
+        <div className='btns-new'>
+          <button className='btn' type="submit">Zatwierdź</button>
+            <Link to={'/profile'}>
+              <button className="btn">Wstecz</button>
+            </Link>
+        </div>
+      </form>
+    </div>
     );
   }
 
