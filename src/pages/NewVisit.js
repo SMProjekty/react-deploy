@@ -39,7 +39,7 @@ function NewVisit() {
         Status: 'N'
       };
 
-      fetch(`http://127.0.0.1:8000/visit/${id}/`,
+      fetch(`https://fryzjerprojekt.herokuapp.com/visit/${id}/`,
         {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},

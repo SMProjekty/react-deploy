@@ -39,7 +39,7 @@ function UseLogin () {
       setErrors(error)
       return error
     }else{
-      fetch("http://127.0.0.1:8000/login",
+      fetch("https://fryzjerprojekt.herokuapp.com/login",
       {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},

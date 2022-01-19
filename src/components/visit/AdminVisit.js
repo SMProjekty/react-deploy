@@ -12,7 +12,7 @@ function AdminVisit() {
     },[])
 
     function ShowVisit(){
-        axios.get(`http://127.0.0.1:8000/vall`,
+        axios.get(`https://fryzjerprojekt.herokuapp.com/vall`,
         {
             method: 'GET',
             headers: {'Content-Type': 'application/json'},
@@ -29,7 +29,7 @@ function AdminVisit() {
         const idvisit = id
         let info = ('Coś poszło nie tak..')
 
-         fetch(`http://127.0.0.1:8000/visit/${idvisit}/`,
+         fetch(`https://fryzjerprojekt.herokuapp.com/visit/${idvisit}/`,
          {
              method: 'PUT',
              headers: {'Content-Type': 'application/json'},

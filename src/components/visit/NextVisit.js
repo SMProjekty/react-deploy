@@ -15,7 +15,7 @@ function NextVisit(props) {
     },[])
 
     function ShowVisit(){
-        axios.get(`http://127.0.0.1:8000/visit/${id}/`,
+        axios.get(`https://fryzjerprojekt.herokuapp.com/visit/${id}/`,
         {
             method: 'GET',
             headers: {'Content-Type': 'application/json'},
@@ -31,7 +31,7 @@ function NextVisit(props) {
         const idvisit = id
         let info = ('Coś poszło nie tak..')
 
-        axios.delete(`http://127.0.0.1:8000/visit/${idvisit}/`,
+        axios.delete(`https://fryzjerprojekt.herokuapp.com/visit/${idvisit}/`,
             {
                 method: 'Delete',
                 headers: {'Content-Type': 'application/json'},

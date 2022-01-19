@@ -42,7 +42,7 @@ const UseRegister = () => {
         Phone: user.phone,
       }
 
-      fetch("http://127.0.0.1:8000/register",
+      fetch("https://fryzjerprojekt.herokuapp.com/register",
       {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},

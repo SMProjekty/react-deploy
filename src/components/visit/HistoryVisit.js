@@ -16,7 +16,7 @@ function HistoryVisit() {
     },[])
 
     function GetHistory (){
-        axios.get(`http://127.0.0.1:8000/visitW/${id}/`,
+        axios.get(`https://fryzjerprojekt.herokuapp.com/visitW/${id}/`,
         {
             method: 'GET',
             headers: {'Content-Type': 'application/json'},
