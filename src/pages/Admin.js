@@ -8,7 +8,7 @@ function Admin() {
     <div className='text'>
       <h1>Witaj, Administratorze </h1>
       <div className='btns'>
-        <Link to={'/'}>
+        <Link to={'/react-deploy'}>
           <button className="btn">Wyloguj</button>
         </Link>
       </div>

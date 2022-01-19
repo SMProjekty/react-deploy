@@ -22,7 +22,7 @@ function Profile () {
           <button className="btn">Historia wizyt</button>
         </Link>
 
-        <Link to={'/'}>
+        <Link to={'/react-deploy'}>
           <button className="btn">Wyloguj</button>
         </Link>
       </div>

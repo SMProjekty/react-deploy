@@ -38,7 +38,7 @@ function RegisterForm() {
                     <input type="phone" name="phone" id="phone" value={user.phone} onChange={handleChange} />
                 </div>
                 <div className='btns'>
-                    <Link to={'/'}>
+                    <Link to={'/react-deploy'}>
                         <button  className='btn'>{"Wstecz"}</button>
                     </Link>
                     <button className='btn' type='submit'>Zarejestruj</button>

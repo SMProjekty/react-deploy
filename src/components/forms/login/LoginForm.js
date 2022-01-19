@@ -24,7 +24,7 @@ function LoginForm() {
 
                 <div className='btns-three'>
                     <button className='btn' type='submit'>Zaloguj</button>
-                    <Link to={'/'}>
+                    <Link to={'/react-deploy'}>
                         <button className='btn'>Wstecz</button>
                     </Link>
                     <Link to={'/admin'}>

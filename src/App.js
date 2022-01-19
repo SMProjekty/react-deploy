@@ -17,7 +17,7 @@ const App = () => {
       <div className="top-red"></div>
       <div className="content">
         <Routes>
-          <Route path='*' element={<Main/>}/>
+          <Route path='/react-deploy' element={<Main/>}/>
           <Route path='/signin' element={<Login/>}/>
           <Route path='/admin' element={<Admin/>}/>
           <Route path='/registration' element={<Registration/>}/>
